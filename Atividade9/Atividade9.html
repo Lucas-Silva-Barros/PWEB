@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Funcao Area Retangulo</title>
+</head>
+
+<body>
+    <script>
+        function Retangulo(base, altura) {
+            this.base = base;
+            this.altura = altura;
+            
+            this.getArea = function()
+            {
+                return this.base * this.altura;
+            }
+                
+            }
+        
+        base = parseFloat(prompt("Digite a base: "));
+        altura = parseFloat(prompt("Digite a altura: "));
+        
+        var resultado = new Retangulo(base, altura);
+        alert("O valor da Area eh: " + resultado.getArea());
+            
+    </script>
+
+</body>
+
+</html>
