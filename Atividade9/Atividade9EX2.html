@@ -1,0 +1,109 @@
+!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Funcao Conta</title>
+</head>
+
+<body>
+    <script>
+        function Conta() {
+            var nomeCorrentista;
+            this.getNome = function(){
+                return this.nomeCorrentista;
+            };
+            
+            this.setNome = function(value){
+                this.nomeCorrentista = value;
+            };
+            
+            var banco;
+            this.getBanco = function(){
+                return this.banco;
+            };
+            
+            this.setBanco = function(value){
+                this.banco = value;
+            };
+            
+            
+            var numConta;
+            this.getNum = function(){
+                return this.numConta;
+            };
+            
+            this.setNum = function(value){
+                this.numConta = value;
+            };
+            
+            
+            var saldo;
+            this.getSaldo = function(){
+                return this.saldo;
+            };
+            
+            this.setSaldo = function(value){
+                this.saldo = value;
+            };
+            
+        };
+            
+            
+            function ContaCorrente(){
+                var saldoEspecial;
+                this.getSaldo = function(){
+                    return this.saldoEspecial;
+                };
+                
+                this.setSaldo = function(value){
+                    this.saldoEspecial = value;
+                };
+            };
+            
+            function Poupanca(){
+                var juros;
+                this.getJuros = function(){
+                   return this.juros; 
+                };
+                
+                this.setJuros = function(value){
+                    this.juros = value;
+                };
+                
+                var dataVencimento;
+                this.getDataVencimento = function(){
+                    return this.dataVencimento;
+                };
+                
+                this.setDataVencimento = function(value){
+                    this.dataVencimento = value;
+                };
+                      
+            };
+            
+            Conta.prototype = new Conta();
+            ContaCorrente.prototype = new Conta();
+            Poupanca.prototype = new Conta();
+            
+            
+            nConta = new Conta();
+            nContaCorrente = new ContaCorrente();
+            nPoupanca = new Poupanca();
+            nConta.setNome("Lucas da Silva Barros");
+            nConta.setBanco('Santander');
+            nConta.setNum('0100')
+            nConta.setSaldo('2500');
+            nContaCorrente.setSaldo('2000');
+            nPoupanca.setJuros('15%');
+            nPoupanca.setDataVencimento("26/10/2020");
+            alert("Nome Correntista: " + nConta.getNome() + '\n' + "Banco: " +           nConta.getBanco() + '\n' + "Numero da Conta: " 
+                  + nConta.getNum() + '\n' + "Saldo(R$): " + nConta.getSaldo() + '\n'+ "Saldo Especial(R$): " 
+                  + nContaCorrente.getSaldo() + '\n' + "Juros: " + nPoupanca.getJuros() + 
+                  '\n' + "Data de Vencimento: " + nPoupanca.getDataVencimento());
+            
+    </script>
+
+</body>
+
+</html>
