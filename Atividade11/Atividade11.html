@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 11</title>
+    <script>
+        function validarTexto() {
+            var x = document.getElementById("idTexto").value
+            if (x == "") {
+                alert("Preencha com algum texto!");
+            } else {
+
+                if (document.getElementById("Maiuscula").checked) {
+                    alert("Texto em letras maiusculas: " + x.toUpperCase());
+                }
+
+                if (document.getElementById("Minuscula").checked) {
+                    alert("Texto em letras minusculas: " + x.toLowerCase());
+                }
+
+                if (document.getElementById("Maiuscula").checked == false && document.getElementById("Minuscula").checked == false) {
+                    alert("Selecione uma opção!");
+                }
+            }
+        }
+
+        function limparCampos() {
+            document.getElementById('idTexto').value = "";
+            document.getElementById("Maiuscula").checked = "";
+            document.getElementById("Minuscula").checked = "";
+        }
+
+    </script>
+</head>
+
+<body>
+
+
+    <div id="principal" width=200 heigth=200 align=left>
+        <label>
+            Digite um Texto:
+        </label>
+        <input name="idTexto" type="text" id="idTexto" size="52" maxlength="150">
+        <br>
+        <br>
+        <input name="Letras maiusculas" id="Maiuscula" type="checkbox" value="Letras maiusculas" />
+        <label for="Letras maiusculas">
+            Letras Maiusculas
+        </label>
+        <input name="Letras minusculas" id="Minuscula" type="checkbox" value="Letras minusculas" />
+        <label for="Letras minusculas">
+            Letras Minusculas
+        </label>
+        <br>
+        <br>
+        <input type="button" onclick="validarTexto()" value="Trocar texto" />
+        <input type="reset" onclick="limparCampos()" name="Limpar" value="Limpar" />
+    </div>
+
+
+</body>
+
+</html>
